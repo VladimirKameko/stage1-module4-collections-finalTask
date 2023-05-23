@@ -1,10 +1,17 @@
 package com.epam.mjc.collections.combined;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
 
 public class LessonsGetter {
     public Set<String> getLessons(Map<String, List<String>> timetable) {
+
+        Set<String> res = new HashSet<>();
+
+        List<List<String>> t = new ArrayList<>(timetable.values());
+        for (List<String> r : t) {
+            res.addAll(r);
+        }
+        return res;
     }
 }
